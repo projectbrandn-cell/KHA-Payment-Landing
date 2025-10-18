@@ -1,3 +1,14 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Pembayaran Berhasil",
+  description: "Transaksi Anda telah berhasil diproses. Terima kasih atas pembayaran Anda.",
+  robots: {
+    index: false,
+    follow: false,
+  },
+};
+
 export default function SuccessPage() {
   return (
     <div className="min-h-screen flex items-center justify-center bg-green-50">

@@ -1,5 +1,6 @@
 "use client";
 import { useRouter } from "next/navigation";
+import Script from "next/script";
 
 const services = [
   {
@@ -37,8 +38,29 @@ export default function LandingPage() {
     );
   };
 
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "PT KITA HARAPAN ABADI",
+    "description": "Layanan pembayaran online untuk event organizer, paket wisata, dan seminar",
+    "url": process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000",
+    "offers": services.map((service) => ({
+      "@type": "Offer",
+      "name": service.name,
+      "description": service.description,
+      "price": service.price,
+      "priceCurrency": "IDR",
+      "availability": "https://schema.org/InStock",
+    })),
+  };
+
   return (
     <div className="min-h-screen flex flex-col bg-gray-100">
+      <Script
+        id="structured-data"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
       <header className="w-full py-6 bg-white shadow-sm">
         <div className="container mx-auto px-4 flex justify-between items-center">
           <h1 className="text-xl font-bold text-blue-700">

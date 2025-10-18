@@ -1,8 +1,9 @@
 "use client";
-import { useState, useEffect } from "react";
+
+import { useState, useEffect, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 
-export default function CheckoutPage() {
+function CheckoutForm() {
   const params = useSearchParams();
   const serviceName = params.get("name") || "";
   const serviceAmount = params.get("amount") || "";
@@ -53,7 +54,7 @@ export default function CheckoutPage() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50">
+    <div className="min-h-screen flex items-center justify-center bg-gray-50 text-stone-950">
       <form
         onSubmit={handleSubmit}
         className="bg-white p-6 rounded-xl shadow-md w-full max-w-md space-y-4"
@@ -112,5 +113,19 @@ export default function CheckoutPage() {
         </button>
       </form>
     </div>
+  );
+}
+
+export default function CheckoutPage() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen flex items-center justify-center bg-gray-50">
+        <div className="bg-white p-6 rounded-xl shadow-md w-full max-w-md">
+          <p className="text-center">Memuat...</p>
+        </div>
+      </div>
+    }>
+      <CheckoutForm />
+    </Suspense>
   );
 }

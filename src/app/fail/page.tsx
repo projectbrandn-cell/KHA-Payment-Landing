@@ -1,3 +1,14 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Pembayaran Gagal",
+  description: "Terjadi kesalahan dalam proses pembayaran. Silakan coba lagi.",
+  robots: {
+    index: false,
+    follow: false,
+  },
+};
+
 export default function FailPage() {
   return (
     <div className="min-h-screen flex items-center justify-center bg-red-50">
