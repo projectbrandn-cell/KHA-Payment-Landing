@@ -15,11 +15,22 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'),
   title: {
-    default: "PT KITA HARAPAN ABADI - Pembayaran Event & Perjalanan",
+    default: "PT KITA HARAPAN ABADI — Informasi Pariwisata & Koordinasi Event (MICE)",
     template: "%s | PT KITA HARAPAN ABADI"
   },
-  description: "Layanan pembayaran online untuk event organizer, paket wisata, dan seminar. Transaksi cepat & aman via Xendit (QRIS, Virtual Account, e-wallet).",
-  keywords: ["pembayaran online", "event organizer", "paket wisata", "seminar", "xendit", "QRIS", "virtual account", "e-wallet", "pembayaran aman"],
+  description: "Katalog layanan informasi pariwisata & koordinasi event (MICE). Pemesanan online, harga Rupiah, pembayaran aman tanpa redirect. Hubungi 082121239287.",
+  keywords: [
+    "informasi pariwisata",
+    "koordinasi event",
+    "MICE",
+    "event organizer",
+    "paket wisata",
+    "travel assist",
+    "pembayaran online",
+    "xendit",
+    "Jakarta",
+    "PT KITA HARAPAN ABADI"
+  ],
   authors: [{ name: "PT KITA HARAPAN ABADI" }],
   creator: "PT KITA HARAPAN ABADI",
   publisher: "PT KITA HARAPAN ABADI",
@@ -27,14 +38,14 @@ export const metadata: Metadata = {
     type: "website",
     locale: "id_ID",
     url: "/",
-    title: "PT KITA HARAPAN ABADI - Pembayaran Event & Perjalanan",
-    description: "Layanan pembayaran online untuk event organizer, paket wisata, dan seminar. Transaksi cepat & aman via Xendit.",
+    title: "PT KITA HARAPAN ABADI — Informasi Pariwisata & Koordinasi Event (MICE)",
+    description: "Katalog layanan informasi pariwisata & koordinasi event (MICE). Pemesanan online, harga Rupiah, pembayaran aman tanpa redirect. Hubungi 082121239287.",
     siteName: "PT KITA HARAPAN ABADI",
   },
   twitter: {
     card: "summary_large_image",
-    title: "PT KITA HARAPAN ABADI - Pembayaran Event & Perjalanan",
-    description: "Layanan pembayaran online untuk event organizer, paket wisata, dan seminar.",
+    title: "PT KITA HARAPAN ABADI — Informasi Pariwisata & Koordinasi Event (MICE)",
+    description: "Katalog layanan informasi pariwisata & koordinasi event (MICE). Pemesanan online, harga Rupiah, pembayaran aman.",
   },
   robots: {
     index: true,

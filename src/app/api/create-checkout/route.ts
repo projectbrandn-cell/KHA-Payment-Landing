@@ -3,7 +3,7 @@ import { NextResponse } from "next/server";
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    const { name, email, phone, amount, notes } = body;
+    const { name, email, phone, amount, notes, sku } = body;
 
     const response = await fetch("https://api.xendit.co/v2/invoices", {
       method: "POST",
@@ -14,9 +14,9 @@ export async function POST(request: Request) {
           Buffer.from(`${process.env.XENDIT_API_KEY}:`).toString("base64"),
       },
       body: JSON.stringify({
-        external_id: `order-${Date.now()}`,
+        external_id: `order-${sku || 'ITEM'}-${Date.now()}`,
         payer_email: email,
-        description: notes || "Pembayaran Layanan",
+        description: `${notes || "Pembayaran Layanan"} (SKU: ${sku || 'N/A'})`,
         amount: amount,
         customer: {
           given_names: name,
